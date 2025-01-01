@@ -5,7 +5,17 @@
 
 // You can assume that the array is non-empty.
 
-const maxValue = (nums) => {};
+const maxValue = (nums) => {
+  let max = -Infinity;
+
+  for (const num of nums) {
+    if (num > max) {
+      max = num;
+    }
+  }
+
+  return max;
+};
 
 // maxValue([4, 7, 2, 8, 10, 9]); // -> 10
 // maxValue([10, 5, 40, 40.3]); // -> 40.3
