@@ -7,7 +7,24 @@
 
 // You can assume that the input number is a positive integer.
 
-const isPrime = (n) => {};
+const isPrime = (n) => {
+  if (n === 1) return false;
+
+  let num = n - 1;
+
+  let isPrime = true;
+
+  while (num > 1) {
+    if (n % num === 0) {
+      isPrime = false;
+
+      return isPrime;
+    }
+    num--;
+  }
+
+  return isPrime;
+};
 
 console.log(isPrime(2)); // -> true
 console.log(isPrime(3)); // -> true
