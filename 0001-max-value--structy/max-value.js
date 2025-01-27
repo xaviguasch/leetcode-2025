@@ -6,16 +6,19 @@
 // You can assume that the array is non-empty.
 
 const maxValue = (nums) => {
-  let max = -Infinity;
+  // todo
+  let maxNumber = nums[0];
 
-  for (const num of nums) {
-    if (num > max) {
-      max = num;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > maxNumber) {
+      maxNumber = nums[i];
     }
   }
 
-  return max;
+  return maxNumber;
 };
+
+console.log(maxValue([4, 7, 2, 8, 10, 9]));
 
 // maxValue([4, 7, 2, 8, 10, 9]); // -> 10
 // maxValue([10, 5, 40, 40.3]); // -> 40.3
