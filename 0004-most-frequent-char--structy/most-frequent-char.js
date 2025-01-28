@@ -15,7 +15,7 @@ const mostFrequentChar = (s) => {
     countHashMap[char] += 1;
   }
 
-  for (let char in countHashMap) {
+  for (let char of s) {
     if (countHashMap[char] > numOfMostFreqChar) {
       mostFreqChar = char;
       numOfMostFreqChar = countHashMap[char];
