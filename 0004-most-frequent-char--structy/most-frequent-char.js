@@ -4,6 +4,25 @@
 
 const mostFrequentChar = (s) => {
   // todo
+  const countHashMap = {};
+  let mostFreqChar;
+  let numOfMostFreqChar = 0;
+
+  for (let char of s) {
+    if (!(char in countHashMap)) {
+      countHashMap[char] = 0;
+    }
+    countHashMap[char] += 1;
+  }
+
+  for (let char in countHashMap) {
+    if (countHashMap[char] > numOfMostFreqChar) {
+      mostFreqChar = char;
+      numOfMostFreqChar = countHashMap[char];
+    }
+  }
+
+  return mostFreqChar;
 };
 
 // mostFrequentChar('bookeeper'); // -> 'e'
