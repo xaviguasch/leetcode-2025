@@ -6,6 +6,18 @@
 
 const pairSum = (numbers, targetSum) => {
   // todo
+
+  const hashMap = {};
+
+  for (let [idx, num] of numbers.entries()) {
+    const complementary = targetSum - num;
+
+    if (complementary in hashMap) {
+      return [idx, hashMap[complementary]];
+    }
+
+    hashMap[num] = idx;
+  }
 };
 
 console.log(pairSum([3, 2, 5, 4, 1], 8));
