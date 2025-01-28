@@ -8,24 +8,32 @@
 // You can assume that the input number is a positive integer.
 
 const isPrime = (n) => {
-  if (n === 1) return false;
-
-  let num = n - 1;
-
-  let isPrime = true;
-
-  while (num > 1) {
-    if (n % num === 0) {
-      isPrime = false;
-
-      return isPrime;
-    }
-    num--;
+  if (n === 0 || n === 1) {
+    console.log("special case", n);
+    return false;
   }
 
-  return isPrime;
+  if (n === 2) {
+    console.log(n);
+
+    return true;
+  }
+
+  for (let i = 2; i < n; i++) {
+    console.log("loop");
+    if (n % i === 0) {
+      console.log(n);
+
+      return false;
+    }
+  }
+
+  console.log(n);
+  return true;
 };
 
+console.log(isPrime(0));
+console.log(isPrime(1));
 console.log(isPrime(2)); // -> true
 console.log(isPrime(3)); // -> true
 console.log(isPrime(4)); // -> false

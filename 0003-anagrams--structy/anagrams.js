@@ -2,33 +2,34 @@
 // Write a function, anagrams, that takes in two strings as arguments. The function should return a boolean indicating whether or not the strings are anagrams. Anagrams are strings that contain the same characters, but in any order.
 
 const anagrams = (s1, s2) => {
-  const hashMap1 = {};
-  const hashMap2 = {};
+  // todo
+  const count = {};
 
-  for (const char of s1) {
-    if (!hashMap1[char]) {
-      hashMap1[char] = 1;
+  for (let char of s1) {
+    if (!(char in count)) {
+      count[char] = 0;
+    }
+    count[char] += 1;
+  }
+
+  for (let char of s2) {
+    if (char in count) {
+      count[char] -= 1;
     } else {
-      hashMap1[char]++;
+      return false;
     }
   }
 
-  for (const char of s2) {
-    if (!hashMap2[char]) {
-      hashMap2[char] = 1;
-    } else {
-      hashMap2[char]++;
-    }
-  }
-
-  for (key in hashMap2) {
-    if (hashMap2[key] !== hashMap1[key]) {
+  for (let char in count) {
+    if (count[char] !== 0) {
       return false;
     }
   }
 
   return true;
 };
+
+console.log(anagrams("cats", "tocs"));
 
 //   anagrams('restful', 'fluster'); // -> true
 //   anagrams('cats', 'tocs'); // -> false
