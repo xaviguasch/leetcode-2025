@@ -8,29 +8,19 @@
 // You can assume that the input number is a positive integer.
 
 const isPrime = (n) => {
-  if (n === 0 || n === 1) {
-    console.log("special case", n);
-    return false;
-  }
-
-  if (n === 2) {
-    console.log(n);
-
-    return true;
-  }
+  if (n <= 1) return false;
 
   for (let i = 2; i < n; i++) {
-    console.log("loop");
     if (n % i === 0) {
-      console.log(n);
-
       return false;
     }
   }
 
-  console.log(n);
   return true;
 };
+
+// Time: O(N)
+// Space: O(1)
 
 console.log(isPrime(0));
 console.log(isPrime(1));
