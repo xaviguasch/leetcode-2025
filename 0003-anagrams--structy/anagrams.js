@@ -3,31 +3,36 @@
 
 const anagrams = (s1, s2) => {
   // todo
-  const count = {};
+  const hashMap = {};
 
-  for (let char of s1) {
-    if (!(char in count)) {
-      count[char] = 0;
+  for (char of s1) {
+    if (!hashMap[char]) {
+      hashMap[char] = 0;
     }
-    count[char] += 1;
+
+    hashMap[char] += 1;
   }
 
-  for (let char of s2) {
-    if (char in count) {
-      count[char] -= 1;
-    } else {
+  console.log(hashMap);
+
+  for (char of s2) {
+    if (!hashMap[char]) {
       return false;
     }
+    hashMap[char] -= 1;
   }
 
-  for (let char in count) {
-    if (count[char] !== 0) {
+  for (char in hashMap) {
+    if (hashMap[char] !== 0) {
       return false;
     }
   }
 
   return true;
 };
+
+// Time: O(N)
+// Space: O(N)
 
 console.log(anagrams("cats", "tocs"));
 
