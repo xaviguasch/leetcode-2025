@@ -27,6 +27,9 @@ const mostFrequentChar = (s) => {
   return mostFreqChar;
 };
 
+// Time: O(N)
+// Space: O(N)
+
 // mostFrequentChar('bookeeper'); // -> 'e'
 // mostFrequentChar('david'); // -> 'd'
 // mostFrequentChar('abby'); // -> 'b'
