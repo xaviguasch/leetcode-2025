@@ -8,6 +8,14 @@
 
 function reverse(str) {
   // write here
+  const newArr = str.split("");
+  const resultArr = [];
+
+  for (let i = newArr.length - 1; i >= 0; i--) {
+    resultArr.push(newArr[i]);
+  }
+
+  return resultArr.join("");
 }
 
 console.log(reverse("apple"));
