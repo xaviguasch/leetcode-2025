@@ -18,5 +18,8 @@ const pairSum = (numbers, targetSum) => {
   }
 };
 
+// Time: O(N)
+// Space: O(N)
+
 console.log(pairSum([3, 2, 5, 4, 1], 8));
 console.log(pairSum([4, 7, 9, 2, 5, 1], 5));
