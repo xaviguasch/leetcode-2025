@@ -7,27 +7,31 @@
 // You can assume that the input only contains alphabetic characters.
 
 const compress = (s) => {
-  let result = [];
-
   let i = 0;
   let j = 0;
 
+  let result = [];
+
   while (j <= s.length) {
     if (s[i] === s[j]) {
-      j += 1;
+      j++;
     } else {
-      const num = j - i;
+      const count = j - i;
 
-      if (num === 1) {
-        result.push(s[i]);
-      } else {
-        result.push(num);
-        result.push(s[i]);
+      if (count !== 1) {
+        result.push(count);
       }
+      result.push(s[i]);
+
       i = j;
+      j++;
     }
   }
+
   return result.join("");
 };
+
+// TIME: O(N)
+// SPACE: O(N)
 
 console.log(compress("ccaaatsss"));
