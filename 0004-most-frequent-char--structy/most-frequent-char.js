@@ -4,21 +4,23 @@
 
 const mostFrequentChar = (s) => {
   // todo
-  const countHashMap = {};
-  let mostFreqChar;
-  let numOfMostFreqChar = 0;
+  let hashMap = {};
 
-  for (let char of s) {
-    if (!(char in countHashMap)) {
-      countHashMap[char] = 0;
+  let mostFreqChar = "";
+  let biggestCount = -Infinity;
+
+  for (char of s) {
+    if (!hashMap[char]) {
+      hashMap[char] = 0;
     }
-    countHashMap[char] += 1;
+
+    hashMap[char] += 1;
   }
 
-  for (let char of s) {
-    if (countHashMap[char] > numOfMostFreqChar) {
+  for (char of s) {
+    if (hashMap[char] > biggestCount) {
+      biggestCount = hashMap[char];
       mostFreqChar = char;
-      numOfMostFreqChar = countHashMap[char];
     }
   }
 
