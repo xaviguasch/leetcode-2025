@@ -3,7 +3,24 @@
 
 // You may assume that each input array does not contain duplicate elements.
 
-const intersection = (a, b) => {};
+const intersection = (a, b) => {
+  const hashMap = {};
+
+  let resultArr = [];
+
+  for (let num of a) {
+    hashMap[num] = 1;
+  }
+
+  for (let num of b) {
+    if (num in hashMap) {
+      hashMap[num] -= 1;
+      resultArr.push(num);
+    }
+  }
+
+  return resultArr;
+};
 
 // Time: O(N)
 // Space: O(N)
