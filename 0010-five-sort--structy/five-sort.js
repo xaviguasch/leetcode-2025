@@ -27,4 +27,8 @@ const fiveSort = (nums) => {
   return nums;
 };
 
+// n = array size
+// Time: O(n)
+// Space: O(1)
+
 console.log(fiveSort([12, 5, 1, 5, 12, 7]));
