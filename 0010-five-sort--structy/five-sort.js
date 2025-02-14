@@ -5,6 +5,26 @@
 
 const fiveSort = (nums) => {
   // todo
+  let i = 0;
+  let j = nums.length - 1;
+
+  while (i <= j) {
+    if (nums[j] === 5) {
+      j--;
+    } else if (nums[i] === 5) {
+      const tempI = nums[i];
+      const tempJ = nums[j];
+
+      nums[i] = tempJ;
+      nums[j] = tempI;
+
+      i++;
+    } else {
+      i++;
+    }
+  }
+
+  return nums;
 };
 
 console.log(fiveSort([12, 5, 1, 5, 12, 7]));
