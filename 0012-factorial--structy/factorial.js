@@ -5,6 +5,14 @@
 // 6 * 5 * 4 * 3 * 2 * 1 = 720
 // You can assume that n is a non-negative integer. Note that the factorial of 0 is defined to be 1
 
-const factorial = (n) => {};
+const factorial = (n) => {
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+};
+
+// Time: O(n)
+// Space: O(n)
 
 console.log(factorial(3));
