@@ -11,4 +11,7 @@ const sumNumbersRecursive = (numbers) => {
   return numbers[0] + sumNumbersRecursive(numbers.slice(1));
 };
 
+// Time: O(n^2)
+// Space: O(n^2)
+
 console.log(sumNumbersRecursive([5, 2, 9, 10]));
