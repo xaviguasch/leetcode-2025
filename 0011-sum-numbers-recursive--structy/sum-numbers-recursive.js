@@ -2,6 +2,13 @@
 
 const sumNumbersRecursive = (numbers) => {
   // TODO
+  let sum = 0;
+
+  if (numbers.length === 0) {
+    return 0;
+  }
+
+  return numbers[0] + sumNumbersRecursive(numbers.slice(1));
 };
 
 console.log(sumNumbersRecursive([5, 2, 9, 10]));
