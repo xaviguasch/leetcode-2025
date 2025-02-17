@@ -6,7 +6,7 @@ const reverseString = (s) => {
     return "";
   }
 
-  return s.slice(1) + s[0];
+  return reverseString(s.slice(1)) + s[0];
 };
 
 // Time: O(n^2)
