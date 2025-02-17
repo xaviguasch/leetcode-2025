@@ -1,6 +1,15 @@
 // reverse string recursive
 // Write a function, reverseString, that takes in a string as an argument. The function should return the string with its characters in reverse order. You must do this recursively.
 
-const reverseString = (s) => {};
+const reverseString = (s) => {
+  if (s.length === 0) {
+    return "";
+  }
+
+  return s.slice(1) + s[0];
+};
+
+// Time: O(n^2)
+// Space: O(n^2)
 
 console.log(reverseString("hello"));
