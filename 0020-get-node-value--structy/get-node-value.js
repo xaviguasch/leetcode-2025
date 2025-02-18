@@ -5,7 +5,25 @@ class Node {
   }
 }
 
-const getNodeValue = (head, index) => {};
+const getNodeValue = (head, index) => {
+  let current = head;
+  let currentIdx = 0;
+
+  while (current !== null) {
+    if (currentIdx === index) {
+      return current.val;
+    }
+
+    current = current.next;
+    currentIdx += 1;
+  }
+
+  return null;
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
 
 // RECURSION VERSION
 // const getNodeValue = (head, index) => {};
