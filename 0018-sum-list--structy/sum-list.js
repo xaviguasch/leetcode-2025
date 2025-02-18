@@ -8,7 +8,34 @@ class Node {
   }
 }
 
-const sumList = (head) => {};
+// ITERATIVE VERSION
+// const sumList = (head) => {
+//   let current = head;
+
+//   let resultSum = 0;
+
+//   while (current !== null) {
+//     resultSum += current.val;
+
+//     current = current.next;
+//   }
+
+//   return resultSum;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
+
+// RECURSION
+const sumList = (head) => {
+  if (head === null) return 0;
+  return head.val + sumList(head.next);
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node(2);
 const b = new Node(8);
