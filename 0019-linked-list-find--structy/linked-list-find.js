@@ -9,22 +9,32 @@ class Node {
 }
 
 // iterative version
-const linkedListFind = (head, target) => {
-  let current = head;
+// const linkedListFind = (head, target) => {
+//   let current = head;
 
-  while (current !== null) {
-    if (current.val === target) {
-      return true;
-    }
+//   while (current !== null) {
+//     if (current.val === target) {
+//       return true;
+//     }
 
-    current = current.next;
-  }
+//     current = current.next;
+//   }
 
-  return false;
-};
+//   return false;
+// };
 
 // recursion version
-// const linkedListFind = (head, target) => {};
+const linkedListFind = (head, target) => {
+  if (head === null) {
+    return false;
+  }
+
+  if (head.val === target) {
+    return true;
+  }
+
+  return linkedListFind(head.next, target);
+};
 
 const a = new Node("a");
 const b = new Node("b");
