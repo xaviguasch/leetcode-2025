@@ -23,6 +23,10 @@ class Node {
 //   return false;
 // };
 
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
+
 // recursion version
 const linkedListFind = (head, target) => {
   if (head === null) {
@@ -35,6 +39,10 @@ const linkedListFind = (head, target) => {
 
   return linkedListFind(head.next, target);
 };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node("a");
 const b = new Node("b");
