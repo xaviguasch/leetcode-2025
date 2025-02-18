@@ -5,28 +5,45 @@ class Node {
   }
 }
 
-const getNodeValue = (head, index) => {
-  let current = head;
-  let currentIdx = 0;
+// ITERATIVE VERSION
+// const getNodeValue = (head, index) => {
+//   let current = head;
+//   let currentIdx = 0;
 
-  while (current !== null) {
-    if (currentIdx === index) {
-      return current.val;
-    }
+//   while (current !== null) {
+//     if (currentIdx === index) {
+//       return current.val;
+//     }
 
-    current = current.next;
-    currentIdx += 1;
-  }
+//     current = current.next;
+//     currentIdx += 1;
+//   }
 
-  return null;
-};
+//   return null;
+// };
 
 // n = number of nodes
 // Time: O(n)
 // Space: O(1)
 
 // RECURSION VERSION
-// const getNodeValue = (head, index) => {};
+const getNodeValue = (head, index, currentIdx = 0) => {
+  if (head === null) {
+    return null;
+  }
+
+  if (currentIdx === index) {
+    return head.val;
+  }
+
+  currentIdx += 1;
+
+  return getNodeValue(head.next, index, currentIdx);
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node("a");
 const b = new Node("b");
