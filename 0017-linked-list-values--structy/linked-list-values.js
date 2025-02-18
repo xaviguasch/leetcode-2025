@@ -10,19 +10,47 @@ class Node {
   }
 }
 
+// const linkedListValues = (head) => {
+//   let current = head;
+
+//   const resultArr = [];
+
+//   while (current !== null) {
+//     resultArr.push(current.val);
+
+//     current = current.next;
+//   }
+
+//   return resultArr;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+
+// RECURSION
+
 const linkedListValues = (head) => {
-  let current = head;
+  const valuesArr = [];
 
-  const resultArr = [];
+  fillValues(head, valuesArr);
 
-  while (current !== null) {
-    resultArr.push(current.val);
+  return valuesArr;
+};
 
-    current = current.next;
+const fillValues = (head, valuesArr) => {
+  if (head === null) {
+    return;
   }
 
-  return resultArr;
+  valuesArr.push(head.val);
+
+  fillValues(head.next, valuesArr);
 };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node("a");
 const b = new Node("b");
