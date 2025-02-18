@@ -8,7 +8,23 @@ class Node {
   }
 }
 
-const reverseList = (head) => {};
+const reverseList = (head) => {
+  let prev = null;
+  let current = head;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+
+  return prev;
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
 
 const a = new Node("a");
 const b = new Node("b");
