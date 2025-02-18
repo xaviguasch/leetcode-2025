@@ -10,7 +10,19 @@ class Node {
   }
 }
 
-const linkedListValues = (head) => {};
+const linkedListValues = (head) => {
+  let current = head;
+
+  const resultArr = [];
+
+  while (current !== null) {
+    resultArr.push(current.val);
+
+    current = current.next;
+  }
+
+  return resultArr;
+};
 
 const a = new Node("a");
 const b = new Node("b");
