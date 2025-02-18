@@ -9,7 +9,19 @@ class Node {
 }
 
 // iterative version
-const linkedListFind = (head, target) => {};
+const linkedListFind = (head, target) => {
+  let current = head;
+
+  while (current !== null) {
+    if (current.val === target) {
+      return true;
+    }
+
+    current = current.next;
+  }
+
+  return false;
+};
 
 // recursion version
 // const linkedListFind = (head, target) => {};
