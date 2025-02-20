@@ -26,9 +26,10 @@ const longestStreak = (head) => {
       currentStreak = 1;
     } else {
       currentStreak += 1;
-      if (currentStreak > maxStreak) {
-        maxStreak = currentStreak;
-      }
+    }
+
+    if (currentStreak > maxStreak) {
+      maxStreak = currentStreak;
     }
 
     current = current.next;
