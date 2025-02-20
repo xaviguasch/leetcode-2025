@@ -10,9 +10,24 @@ class Node {
   }
 }
 
+// ITERATIVE SOLUTION
 const isUnivalueList = (head) => {
   // todo
+  let headVal = head.val;
+  let current = head;
+
+  while (current !== null) {
+    if (current.val !== headVal) {
+      return false;
+    }
+    current = current.next;
+  }
+  return true;
 };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
 
 const a = new Node(7);
 const b = new Node(7);
