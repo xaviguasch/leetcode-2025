@@ -25,4 +25,16 @@ class Node {
 // Time: O(n)
 // Space: O(n)
 
+// RECURSIVE SOLUTION
+const createLinkedList = (values, i = 0) => {
+  if (i === values.length) return null;
+  const head = new Node(values[i]);
+  head.next = createLinkedList(values, i + 1);
+  return head;
+};
+
+//   n = length of values
+// Time: O(n)
+// Space: O(n)
+
 console.log(createLinkedList(["h", "e", "y"]));
