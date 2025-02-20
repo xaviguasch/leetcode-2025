@@ -8,9 +8,38 @@ class Node {
   }
 }
 
+// ITERATIVE SOLUTION
 const longestStreak = (head) => {
   // todo
+  if (head === null) {
+    return 0;
+  }
+
+  let current = head;
+  let maxStreak = 0;
+  let currentStreak = 0;
+  let currentValStreak = head.val;
+
+  while (current !== null) {
+    if (current.val !== currentValStreak) {
+      currentValStreak = current.val;
+      currentStreak = 1;
+    } else {
+      currentStreak += 1;
+      if (currentStreak > maxStreak) {
+        maxStreak = currentStreak;
+      }
+    }
+
+    current = current.next;
+  }
+
+  return maxStreak;
 };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
 
 const a = new Node(5);
 const b = new Node(5);
