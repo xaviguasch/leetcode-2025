@@ -11,23 +11,41 @@ class Node {
 }
 
 // ITERATIVE SOLUTION
-const isUnivalueList = (head) => {
-  // todo
-  let headVal = head.val;
-  let current = head;
+// const isUnivalueList = (head) => {
+//   // todo
+//   let headVal = head.val;
+//   let current = head;
 
-  while (current !== null) {
-    if (current.val !== headVal) {
-      return false;
-    }
-    current = current.next;
-  }
-  return true;
-};
+//   while (current !== null) {
+//     if (current.val !== headVal) {
+//       return false;
+//     }
+//     current = current.next;
+//   }
+//   return true;
+// };
 
 // n = number of nodes
 // Time: O(n)
 // Space: O(1)
+
+// RECURSIVE SOLUTION
+const isUnivalueList = (head, prevVal = null) => {
+  // todo
+  if (head === null) {
+    return true;
+  }
+
+  if (prevVal !== null && head.val !== prevVal) {
+    return false;
+  }
+
+  return isUnivalueList(head.next, head.val);
+};
+
+//   n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node(7);
 const b = new Node(7);
