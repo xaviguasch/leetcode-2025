@@ -13,34 +13,57 @@ class Node {
 }
 
 // ITERATIVE SOLUTION
-const insertNode = (head, value, index) => {
+// const insertNode = (head, value, index) => {
+//   if (index === 0) {
+//     const newHead = new Node(value);
+//     newHead.next = head;
+//     return newHead;
+//   }
+
+//   let current = head;
+//   let prev = null;
+//   count = 0;
+
+//   while (current !== null) {
+//     if (index - 1 === count) {
+//       const temp = current.next;
+//       current.next = new Node(value);
+//       current.next.next = temp;
+//     }
+
+//     count += 1;
+//     current = current.next;
+//   }
+
+//   return head;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
+
+// RECURSIVE SOLUTION
+const insertNode = (head, value, index, count = 0) => {
   if (index === 0) {
     const newHead = new Node(value);
     newHead.next = head;
     return newHead;
   }
 
-  let current = head;
-  let prev = null;
-  count = 0;
-
-  while (current !== null) {
-    if (index - 1 === count) {
-      const temp = current.next;
-      current.next = new Node(value);
-      current.next.next = temp;
-    }
-
-    count += 1;
-    current = current.next;
+  if (count === index - 1) {
+    const next = head.next;
+    head.next = new Node(value);
+    head.next.next = next;
+    return head;
   }
 
+  insertNode(head.next, value, index, count + 1);
   return head;
 };
 
-// n = number of nodes
+//   n = number of nodes
 // Time: O(n)
-// Space: O(1)
+// Space: O(n)
 
 const a = new Node("a");
 const b = new Node("b");
