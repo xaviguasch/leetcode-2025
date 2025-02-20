@@ -12,7 +12,35 @@ class Node {
   }
 }
 
-const insertNode = (head, value, index) => {};
+// ITERATIVE SOLUTION
+const insertNode = (head, value, index) => {
+  if (index === 0) {
+    const newHead = new Node(value);
+    newHead.next = head;
+    return newHead;
+  }
+
+  let current = head;
+  let prev = null;
+  count = 0;
+
+  while (current !== null) {
+    if (index - 1 === count) {
+      const temp = current.next;
+      current.next = new Node(value);
+      current.next.next = temp;
+    }
+
+    count += 1;
+    current = current.next;
+  }
+
+  return head;
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(1)
 
 const a = new Node("a");
 const b = new Node("b");
