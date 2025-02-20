@@ -8,6 +8,21 @@ class Node {
   }
 }
 
-const createLinkedList = (values) => {};
+//ITERATIVE SOLUTION
+// const createLinkedList = (values) => {
+//   const dummyHead = new Node(null);
+//   let tail = dummyHead;
+
+//   for (let val of values) {
+//     tail.next = new Node(val);
+//     tail = tail.next;
+//   }
+
+//   return dummyHead.next;
+// };
+
+// n = length of values
+// Time: O(n)
+// Space: O(n)
 
 console.log(createLinkedList(["h", "e", "y"]));
