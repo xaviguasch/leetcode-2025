@@ -5,10 +5,34 @@ class Node {
     this.right = null;
   }
 }
-
+// ITERATIVE
 const depthFirstValues = (root) => {
   // todo
+  if (root === null) {
+    return [];
+  }
+  const stack = [root];
+  const resultArr = [];
+
+  while (stack.length !== 0) {
+    const currentNode = stack.pop();
+
+    resultArr.push(currentNode.val);
+
+    if (currentNode.right !== null) {
+      stack.push(currentNode.right);
+    }
+    if (currentNode.left !== null) {
+      stack.push(currentNode.left);
+    }
+  }
+
+  return resultArr;
 };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node("a");
 const b = new Node("b");
