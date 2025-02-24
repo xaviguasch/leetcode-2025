@@ -6,32 +6,45 @@ class Node {
   }
 }
 // ITERATIVE
-const depthFirstValues = (root) => {
-  // todo
-  if (root === null) {
-    return [];
-  }
-  const stack = [root];
-  const resultArr = [];
+// const depthFirstValues = (root) => {
+//   // todo
+//   if (root === null) {
+//     return [];
+//   }
+//   const stack = [root];
+//   const resultArr = [];
 
-  while (stack.length !== 0) {
-    const currentNode = stack.pop();
+//   while (stack.length !== 0) {
+//     const currentNode = stack.pop();
 
-    resultArr.push(currentNode.val);
+//     resultArr.push(currentNode.val);
 
-    if (currentNode.right !== null) {
-      stack.push(currentNode.right);
-    }
-    if (currentNode.left !== null) {
-      stack.push(currentNode.left);
-    }
-  }
+//     if (currentNode.right !== null) {
+//       stack.push(currentNode.right);
+//     }
+//     if (currentNode.left !== null) {
+//       stack.push(currentNode.left);
+//     }
+//   }
 
-  return resultArr;
-};
+//   return resultArr;
+// };
 
 // n = number of nodes
 // Time: O(n)
+// Space: O(n)
+
+// RECURSIVE
+const depthFirstValues = (root) => {
+  if (root === null) return [];
+
+  const leftValues = depthFirstValues(root.left);
+  const rightValues = depthFirstValues(root.right);
+  return [root.val, ...leftValues, ...rightValues];
+};
+
+// n = number of nodes
+// Time: O(n^2)
 // Space: O(n)
 
 const a = new Node("a");
