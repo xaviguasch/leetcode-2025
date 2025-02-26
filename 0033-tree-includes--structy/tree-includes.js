@@ -42,7 +42,36 @@ class Node {
 // Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
 
 // ITERATIVE DEPTH FIRST
-const treeIncludes = (root, target) => {};
+const treeIncludes = (root, target) => {
+  if (root === null) {
+    return false;
+  }
+
+  const stack = [root];
+
+  while (stack.length > 0) {
+    const currentNode = stack.pop();
+
+    if (currentNode.val === target) {
+      return true;
+    }
+
+    if (currentNode.right !== null) {
+      stack.push(currentNode.right);
+    }
+
+    if (currentNode.left !== null) {
+      stack.push(currentNode.left);
+    }
+  }
+
+  // if value not found
+  return false;
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
 
 const a = new Node("a");
 const b = new Node("b");
