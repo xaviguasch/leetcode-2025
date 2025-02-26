@@ -34,6 +34,11 @@ const treeSum = (root) => {
   return resultSum;
 };
 
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+// Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
+
 const a = new Node(3);
 const b = new Node(11);
 const c = new Node(4);
