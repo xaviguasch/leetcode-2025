@@ -69,8 +69,11 @@ class Node {
 // Space: O(n)
 
 // DEPTH FIRST RECURSIVE (there is BREATH FIRST RECURSIVE)
-const treeSum = (root) => {};
+const treeSum = (root) => {
+  if (root === null) return 0;
 
+  return root.val + treeSum(root.left) + treeSum(root.right);
+};
 // n = number of nodes
 // Time: O(n)
 // Space: O(n)
