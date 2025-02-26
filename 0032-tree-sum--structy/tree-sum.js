@@ -40,29 +40,36 @@ class Node {
 // Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
 
 // DEPTH FIRST ITERATIVE
-const treeSum = (root) => {
-  if (root === null) {
-    return 0;
-  }
+// const treeSum = (root) => {
+//   if (root === null) {
+//     return 0;
+//   }
 
-  const stack = [root];
-  let resultSum = 0;
+//   const stack = [root];
+//   let resultSum = 0;
 
-  while (stack.length !== 0) {
-    const currNode = stack.pop();
+//   while (stack.length !== 0) {
+//     const currNode = stack.pop();
 
-    resultSum += currNode.val;
+//     resultSum += currNode.val;
 
-    if (currNode.right !== null) {
-      stack.push(currNode.right);
-    }
+//     if (currNode.right !== null) {
+//       stack.push(currNode.right);
+//     }
 
-    if (currNode.left !== null) {
-      stack.push(currNode.left);
-    }
-  }
-  return resultSum;
-};
+//     if (currNode.left !== null) {
+//       stack.push(currNode.left);
+//     }
+//   }
+//   return resultSum;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+
+// DEPTH FIRST RECURSIVE (there is BREATH FIRST RECURSIVE)
+const treeSum = (root) => {};
 
 // n = number of nodes
 // Time: O(n)

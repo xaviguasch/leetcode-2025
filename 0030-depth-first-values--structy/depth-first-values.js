@@ -7,27 +7,24 @@ class Node {
 }
 // ITERATIVE
 // const depthFirstValues = (root) => {
-//   // todo
-//   if (root === null) {
+//   if (root === null)
 //     return [];
-//   }
-//   const stack = [root];
-//   const resultArr = [];
 
-//   while (stack.length !== 0) {
-//     const currentNode = stack.pop();
+//   const values = [];
+//   const stack = [ root ];
 
-//     resultArr.push(currentNode.val);
+//   while (stack.length > 0) {
+//     const node = stack.pop();
+//     values.push(node.val);
 
-//     if (currentNode.right !== null) {
-//       stack.push(currentNode.right);
-//     }
-//     if (currentNode.left !== null) {
-//       stack.push(currentNode.left);
-//     }
+//     if (node.right !== null)
+//       stack.push(node.right);
+
+//     if (node.left !== null)
+//       stack.push(node.left);
 //   }
 
-//   return resultArr;
+//   return values;
 // };
 
 // n = number of nodes
