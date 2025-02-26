@@ -10,31 +10,39 @@ class Node {
 }
 
 // ITERATIVE BREADTH FIRST
-const treeIncludes = (root, target) => {
-  if (root === null) {
-    return false;
-  }
+// const treeIncludes = (root, target) => {
+//   if (root === null) {
+//     return false;
+//   }
 
-  const queue = [root];
+//   const queue = [root];
 
-  while (queue.length !== 0) {
-    const currentNode = queue.shift();
+//   while (queue.length !== 0) {
+//     const currentNode = queue.shift();
 
-    if (currentNode.val === target) {
-      return true;
-    }
+//     if (currentNode.val === target) {
+//       return true;
+//     }
 
-    if (currentNode.left !== null) {
-      queue.push(currentNode.left);
-    }
-    if (currentNode.right !== null) {
-      queue.push(currentNode.right);
-    }
-  }
+//     if (currentNode.left !== null) {
+//       queue.push(currentNode.left);
+//     }
+//     if (currentNode.right !== null) {
+//       queue.push(currentNode.right);
+//     }
+//   }
 
-  // if value not found
-  return false;
-};
+//   // if value not found
+//   return false;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+// Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
+
+// ITERATIVE DEPTH FIRST
+const treeIncludes = (root, target) => {};
 
 const a = new Node("a");
 const b = new Node("b");
