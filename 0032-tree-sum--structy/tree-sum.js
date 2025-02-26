@@ -10,7 +10,29 @@ class Node {
 }
 
 // BREADTH FIRST ITERATIVE
-const treeSum = (root) => {};
+const treeSum = (root) => {
+  if (root === null) {
+    return 0;
+  }
+
+  const queue = [root];
+  let resultSum = 0;
+
+  while (queue.length !== 0) {
+    const currNode = queue.shift();
+
+    resultSum += currNode.val;
+
+    if (currNode.left !== null) {
+      queue.push(currNode.left);
+    }
+    if (currNode.right !== null) {
+      queue.push(currNode.right);
+    }
+  }
+
+  return resultSum;
+};
 
 const a = new Node(3);
 const b = new Node(11);
