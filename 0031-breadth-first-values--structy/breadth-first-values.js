@@ -10,7 +10,31 @@ class Node {
 }
 
 // ITERATIVE
-const breadthFirstValues = (root) => {};
+const breadthFirstValues = (root) => {
+  if (root === null) return [];
+
+  const queue = [root];
+  const resultArr = [];
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    resultArr.push(current.val);
+
+    if (current.left !== null) {
+      queue.push(current.left);
+    }
+    if (current.right !== null) {
+      queue.push(current.right);
+    }
+  }
+
+  return resultArr;
+};
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+// Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
 
 const a = new Node("a");
 const b = new Node("b");
