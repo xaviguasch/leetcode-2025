@@ -36,6 +36,9 @@ const breadthFirstValues = (root) => {
 // Space: O(n)
 // Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
 
+// NOTE: You really can't do a breadth first traversal with recursion, it needs a queue,
+// and recursion uses a stack order internally
+
 const a = new Node("a");
 const b = new Node("b");
 const c = new Node("c");
