@@ -10,34 +10,63 @@ class Node {
 }
 
 // BREADTH FIRST ITERATIVE
+// const treeSum = (root) => {
+//   if (root === null) {
+//     return 0;
+//   }
+
+//   const queue = [root];
+//   let resultSum = 0;
+
+//   while (queue.length !== 0) {
+//     const currNode = queue.shift();
+
+//     resultSum += currNode.val;
+
+//     if (currNode.left !== null) {
+//       queue.push(currNode.left);
+//     }
+//     if (currNode.right !== null) {
+//       queue.push(currNode.right);
+//     }
+//   }
+
+//   return resultSum;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+// Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
+
+// DEPTH FIRST ITERATIVE
 const treeSum = (root) => {
   if (root === null) {
     return 0;
   }
 
-  const queue = [root];
+  const stack = [root];
   let resultSum = 0;
 
-  while (queue.length !== 0) {
-    const currNode = queue.shift();
+  while (stack.length !== 0) {
+    const currNode = stack.pop();
 
     resultSum += currNode.val;
 
-    if (currNode.left !== null) {
-      queue.push(currNode.left);
-    }
     if (currNode.right !== null) {
-      queue.push(currNode.right);
+      stack.push(currNode.right);
+    }
+
+    if (currNode.left !== null) {
+      stack.push(currNode.left);
     }
   }
-
   return resultSum;
 };
 
 // n = number of nodes
 // Time: O(n)
 // Space: O(n)
-// Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
 
 const a = new Node(3);
 const b = new Node(11);
