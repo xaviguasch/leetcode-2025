@@ -9,7 +9,32 @@ class Node {
   }
 }
 
-const treeIncludes = (root, target) => {};
+// ITERATIVE BREADTH FIRST
+const treeIncludes = (root, target) => {
+  if (root === null) {
+    return false;
+  }
+
+  const queue = [root];
+
+  while (queue.length !== 0) {
+    const currentNode = queue.shift();
+
+    if (currentNode.val === target) {
+      return true;
+    }
+
+    if (currentNode.left !== null) {
+      queue.push(currentNode.left);
+    }
+    if (currentNode.right !== null) {
+      queue.push(currentNode.right);
+    }
+  }
+
+  // if value not found
+  return false;
+};
 
 const a = new Node("a");
 const b = new Node("b");
