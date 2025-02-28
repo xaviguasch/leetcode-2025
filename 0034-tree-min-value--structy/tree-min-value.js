@@ -12,26 +12,33 @@ class Node {
 }
 
 // ITERATIVE BREADTH FIRST SOLUTION
-const treeMinValue = (root) => {
-  const queue = [root];
+// const treeMinValue = (root) => {
+//   const queue = [root];
 
-  let minValue = +Infinity;
+//   let minValue = +Infinity;
 
-  while (queue.length > 0) {
-    const currentNode = queue.shift();
+//   while (queue.length > 0) {
+//     const currentNode = queue.shift();
 
-    if (currentNode.val < minValue) {
-      minValue = currentNode.val;
-    }
+//     if (currentNode.val < minValue) {
+//       minValue = currentNode.val;
+//     }
 
-    if (currentNode.left !== null) {
-      queue.push(currentNode.left);
-    }
-    if (currentNode.right !== null) queue.push(currentNode.right);
-  }
+//     if (currentNode.left !== null) {
+//       queue.push(currentNode.left);
+//     }
+//     if (currentNode.right !== null) queue.push(currentNode.right);
+//   }
 
-  return minValue;
-};
+//   return minValue;
+// };
+
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+
+// RECURSIVE DEPTH FIRST SOLUTION
+const treeMinValue = (root) => {};
 
 const a = new Node(3);
 const b = new Node(11);
