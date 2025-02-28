@@ -36,9 +36,30 @@ class Node {
 // n = number of nodes
 // Time: O(n)
 // Space: O(n)
+// Note: this solution should really be considered O(n^2) runtime because the JavaScript shift() methods runs in O(n). JavaScript does not have a native queue data structure that is maximally efficient.
 
-// RECURSIVE DEPTH FIRST SOLUTION
-const treeMinValue = (root) => {};
+// ITERATIVE DEPTH FIRST SOLUTION
+const treeMinValue = (root) => {
+  const stack = [root];
+  let minValue = +Infinity;
+
+  while (stack.length > 0) {
+    const currentNode = stack.pop();
+
+    if (currentNode.val < minValue) {
+      minValue = currentNode.val;
+    }
+
+    if (currentNode.right !== null) {
+      stack.push(currentNode.right);
+    }
+    if (currentNode.left !== null) {
+      stack.push(currentNode.left);
+    }
+  }
+
+  return minValue;
+};
 
 const a = new Node(3);
 const b = new Node(11);
