@@ -5,6 +5,16 @@
 
 // You can assume that the array is non-empty.
 
-const maxValue = (nums) => {};
+const maxValue = (nums) => {
+  let max = -Infinity;
+
+  for (num of nums) {
+    if (num > max) {
+      max = num;
+    }
+  }
+
+  return max;
+};
 
 console.log(maxValue([4, 7, 2, 8, 10, 9]));
