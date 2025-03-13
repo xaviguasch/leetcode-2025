@@ -3,6 +3,22 @@
 
 // You can assume that the sentence is non-empty.
 
-const longestWord = (sentence) => {};
+const longestWord = (sentence) => {
+  let lWord = "";
+
+  const words = sentence.split(" ");
+
+  for (word of words) {
+    if (word.length >= lWord.length) {
+      lWord = word;
+    }
+  }
+
+  return lWord;
+};
 
 console.log(longestWord("what a wonderful world")); // -> 'wonderful'
+
+// n = length of sentence
+// Time: O(n)
+// Space: O(n)
