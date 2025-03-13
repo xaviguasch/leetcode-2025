@@ -17,4 +17,8 @@ const maxValue = (nums) => {
   return max;
 };
 
+// n = length of array
+// Time: O(n)
+// Space: O(1)
+
 console.log(maxValue([4, 7, 2, 8, 10, 9]));
