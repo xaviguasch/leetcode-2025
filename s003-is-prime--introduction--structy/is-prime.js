@@ -7,6 +7,19 @@
 
 // You can assume that the input number is a positive integer.
 
-const isPrime = (n) => {};
+const isPrime = (n) => {
+  if (n === 1) return false;
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
 console.log(isPrime(6));
+
+// n = input number
+// Time: O((n)
+// Space: O(1)
