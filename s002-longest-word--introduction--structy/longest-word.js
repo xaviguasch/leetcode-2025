@@ -8,7 +8,7 @@ const longestWord = (sentence) => {
 
   const words = sentence.split(" ");
 
-  for (word of words) {
+  for (let word of words) {
     if (word.length >= lWord.length) {
       lWord = word;
     }

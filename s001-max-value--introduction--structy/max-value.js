@@ -8,7 +8,7 @@
 const maxValue = (nums) => {
   let max = -Infinity;
 
-  for (num of nums) {
+  for (let num of nums) {
     if (num > max) {
       max = num;
     }
