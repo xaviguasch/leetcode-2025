@@ -4,7 +4,32 @@
 // You can assume that the input string is non-empty.
 
 const mostFrequentChar = (s) => {
-  // todo
+  const splittedStr = s.split("");
+  const hashMap = {};
+
+  let highestCount = 0;
+  let highestChar = "";
+
+  for (char of splittedStr) {
+    if (!(char in hashMap)) {
+      hashMap[char] = 0;
+    }
+
+    hashMap[char] += 1;
+  }
+
+  for (char in hashMap) {
+    if (hashMap[char] > highestCount) {
+      highestCount = hashMap[char];
+      highestChar = char;
+    }
+  }
+
+  return highestChar;
 };
+
+// n = length of string
+// Time: O(n)
+// Space: O(n)
 
 console.log(mostFrequentChar("bookeeper")); // -> 'e'
