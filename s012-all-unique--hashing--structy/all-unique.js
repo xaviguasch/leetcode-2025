@@ -3,17 +3,21 @@
 
 const allUnique = (items) => {
   // todo
-  const hashMap = {};
+  //   const hashMap = {};
 
-  for (const el of items) {
-    if (!hashMap[el]) {
-      hashMap[el] = 1;
-    } else {
-      return false;
-    }
-  }
+  //   for (const el of items) {
+  //     if (!hashMap[el]) {
+  //       hashMap[el] = 1;
+  //     } else {
+  //       return false;
+  //     }
+  //   }
 
-  return true;
+  //   return true;
+
+  const newSet = new Set(items);
+
+  return newSet.size === items.length;
 };
 
 // n = array length
