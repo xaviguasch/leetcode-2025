@@ -3,7 +3,31 @@
 
 // You can return the result in any order.
 
-const intersectionWithDupes = (a, b) => {};
+const intersectionWithDupes = (a, b) => {
+  const hashMap = {};
+  const resultArr = [];
+
+  for (const letter of a) {
+    if (!hashMap[letter]) {
+      hashMap[letter] = 0;
+    }
+    hashMap[letter] += 1;
+  }
+
+  for (const letter of b) {
+    if (hashMap[letter]) {
+      hashMap[letter] -= 1;
+      resultArr.push(letter);
+    }
+  }
+
+  return resultArr;
+};
+
+// n = length of array a
+// m = length of array b
+// Time: O(n+m)
+// Space: O(n+m)
 
 console.log(intersectionWithDupes(["a", "b", "c", "b"], ["x", "y", "b", "b"]));
 // -> ["b", "b"]
