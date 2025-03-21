@@ -3,6 +3,21 @@
 
 const allUnique = (items) => {
   // todo
+  const hashMap = {};
+
+  for (const el of items) {
+    if (!hashMap[el]) {
+      hashMap[el] = 1;
+    } else {
+      return false;
+    }
+  }
+
+  return true;
 };
+
+// n = array length
+// Time: O(n)
+// Space: O(n)
 
 console.log(allUnique(["q", "r", "s", "a"])); // -> true
