@@ -7,6 +7,15 @@
 
 const maxValue = (nums) => {
   // todo
+  let maxNum = -Infinity;
+
+  nums.forEach((num) => {
+    if (num > maxNum) {
+      maxNum = num;
+    }
+  });
+
+  return maxNum;
 };
 
 console.log(maxValue([4, 7, 2, 8, 10, 9]));
