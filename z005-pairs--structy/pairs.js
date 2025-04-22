@@ -7,6 +7,18 @@
 
 const pairs = (elements) => {
   // todo
+  const resultArr = [];
+
+  for (let i = 0; i < elements.length; i++) {
+    for (let j = i + 1; j < elements.length; j++) {
+      resultArr.push([elements[i], elements[j]]);
+    }
+  }
+
+  return resultArr;
 };
+
+// Time: O(n^2)
+// Space: O(n^2)
 
 console.log(pairs(["a", "b", "c", "d"]));
