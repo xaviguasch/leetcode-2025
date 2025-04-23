@@ -5,6 +5,29 @@
 
 const mostFrequentChar = (s) => {
   // todo
+  const hashMap = {};
+
+  let mostFreqCharacter = "";
+  let numMostFreqChar = 0;
+
+  for (const char of s) {
+    if (!(char in hashMap)) {
+      hashMap[char] = 0;
+    }
+    hashMap[char] += 1;
+  }
+
+  for (const char in hashMap) {
+    if (hashMap[char] > numMostFreqChar) {
+      mostFreqCharacter = char;
+      numMostFreqChar = hashMap[char];
+    }
+  }
+
+  return mostFreqCharacter;
 };
+
+// Time: O(n)
+// Space: O(n)
 
 console.log(mostFrequentChar("bookeeper"));
