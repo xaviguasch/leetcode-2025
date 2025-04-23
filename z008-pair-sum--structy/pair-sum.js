@@ -5,6 +5,22 @@
 
 // There is guaranteed to be one such pair that sums to the target.
 
-const pairSum = (numbers, targetSum) => {};
+const pairSum = (numbers, targetSum) => {
+  const hashMap = {};
+
+  for (const [index, num] of numbers.entries()) {
+    const complement = targetSum - num;
+
+    if (complement in hashMap) {
+      return [index, hashMap[complement]];
+    }
+
+    hashMap[num] = index;
+  }
+};
+
+// n = length of array
+// Time: O(n)
+// Space: O(n)
 
 console.log(pairSum([3, 2, 5, 4, 1], 8));
