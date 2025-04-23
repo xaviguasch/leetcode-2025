@@ -7,7 +7,7 @@ const mostFrequentChar = (s) => {
   // todo
   const hashMap = {};
 
-  let mostFreqCharacter = "";
+  let mostFreqCharacter = null;
   let numMostFreqChar = 0;
 
   for (const char of s) {
