@@ -5,6 +5,21 @@
 
 // There is guaranteed to be one such pair whose product is the target.
 
-const pairProduct = (numbers, targetProduct) => {};
+const pairProduct = (numbers, targetProduct) => {
+  const hashMap = {};
+
+  for (const [index, num] of numbers.entries()) {
+    const complement = targetProduct / num;
+
+    if (complement in hashMap) {
+      return [index, hashMap[complement]];
+    }
+
+    hashMap[num] = index;
+  }
+};
+
+// Time: O(n)
+// Space: O(n)
 
 console.log(pairProduct([3, 2, 5, 4, 1], 8));
