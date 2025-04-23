@@ -18,7 +18,7 @@ const mostFrequentChar = (s) => {
   }
 
   for (const char of s) {
-    if (hashMap[char] > numMostFreqChar) {
+    if (mostFreqCharacter === null || hashMap[char] > numMostFreqChar) {
       mostFreqCharacter = char;
       numMostFreqChar = hashMap[char];
     }
