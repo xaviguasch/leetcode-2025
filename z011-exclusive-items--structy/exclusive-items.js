@@ -5,6 +5,27 @@
 
 const exclusiveItems = (a, b) => {
   // todo
+  const aSet = new Set(a);
+  const bSet = new Set(b);
+
+  const resultArr = [];
+
+  for (const item of b) {
+    if (!aSet.has(item)) {
+      resultArr.push(item);
+    }
+  }
+
+  for (const item of a) {
+    if (!bSet.has(item)) {
+      resultArr.push(item);
+    }
+  }
+
+  return resultArr;
 };
+
+// Time O(N)
+// Space O(N)
 
 console.log(exclusiveItems([4, 2, 1, 6], [3, 6, 9, 2, 10]));
