@@ -8,6 +8,14 @@
 
 const factorial = (n) => {
   // todo
+  if (n === 1) {
+    return 1;
+  }
+
+  return n * factorial(n - 1);
 };
+
+// Time: O(n)
+// Space: O(n)
 
 console.log(factorial(3));
