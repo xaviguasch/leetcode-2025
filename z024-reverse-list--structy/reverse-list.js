@@ -8,23 +8,34 @@ class Node {
   }
 }
 
-const reverseList = (head) => {
-  // ITERATIVE
-  let current = head;
-  let prev = null;
+// const reverseList = (head) => {
+//   // ITERATIVE
+//   let current = head;
+//   let prev = null;
 
-  while (current !== null) {
-    const next = current.next;
+//   while (current !== null) {
+//     const next = current.next;
 
-    current.next = prev;
-    prev = current;
-    current = next;
-  }
+//     current.next = prev;
+//     prev = current;
+//     current = next;
+//   }
 
-  return prev;
+//   return prev;
 
-  // Time: O(N)
-  // Space: O(1)
+//   // Time: O(N)
+//   // Space: O(1)
+// };
+
+const reverseList = (head, prev = null) => {
+  // RECURSION
+  if (head === null) return prev;
+  const next = head.next;
+  head.next = prev;
+  return reverseList(next, head);
+
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node("a");
