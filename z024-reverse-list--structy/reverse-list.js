@@ -9,7 +9,22 @@ class Node {
 }
 
 const reverseList = (head) => {
-  // todo
+  // ITERATIVE
+  let current = head;
+  let prev = null;
+
+  while (current !== null) {
+    const next = current.next;
+
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+
+  return prev;
+
+  // Time: O(N)
+  // Space: O(1)
 };
 
 const a = new Node("a");
