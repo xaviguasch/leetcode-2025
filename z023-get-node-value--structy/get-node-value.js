@@ -11,7 +11,33 @@ class Node {
 }
 
 const getNodeValue = (head, index) => {
-  // todo
+  // ITERATIVE
+  //    let current = head
+  //    let idx = 0
+
+  //    while(current !== null) {
+  //      if (idx === index) {
+  //        return current.val
+  //      }
+
+  //      current = current.next
+  //      idx += 1
+  //    }
+
+  //    return null
+
+  // Time: O(N)
+  // Space: O(1)
+
+  // RECURSIVE
+  if (head === null) return null;
+
+  if (index === 0) return head.val;
+
+  return getNodeValue(head.next, index - 1);
+
+  // Time: O(N)
+  // Space: O(N)
 };
 
 const a = new Node("a");
