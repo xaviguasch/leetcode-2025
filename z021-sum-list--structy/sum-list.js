@@ -9,7 +9,33 @@ class Node {
 }
 
 const sumList = (head) => {
-  // todo
+  // ITERATIVE
+  // let current = head
+  // let totalSum = 0
+
+  // while (current !== null) {
+  //   totalSum += current.val
+
+  //   current = current.next
+  // }
+
+  // return totalSum
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(1)
+
+  // RECURSIVE
+
+  if (head === null) return 0;
+
+  let totalSum = 0;
+
+  return head.val + sumList(head.next);
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node(2);
