@@ -12,7 +12,35 @@ class Node {
 
 const linkedListValues = (head) => {
   // todo
+  // ITERATIVE
+  //   let current = head;
+  //   const resultArr = [];
+
+  //   while (current !== null) {
+  //     resultArr.push(current.val);
+
+  //     current = current.next;
+  //   }
+
+  //   return resultArr;
+
+  // RECURSIVE
+  const resultArr = [];
+
+  fillValues(head, resultArr);
+
+  return resultArr;
 };
+
+const fillValues = (head, values) => {
+  if (head === null) return;
+
+  values.push(head.val);
+  fillValues(head.next, values);
+};
+
+// Time: O(N)
+// Space: O(N)
 
 const a = new Node("a");
 const b = new Node("b");
