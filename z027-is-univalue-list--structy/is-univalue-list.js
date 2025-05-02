@@ -12,18 +12,6 @@ class Node {
 
 const isUnivalueList = (head) => {
   // todo
-  const firstVal = head.val;
-  let current = head;
-
-  while (current !== null) {
-    if (current.val !== head.val) {
-      return false;
-    }
-
-    current = current.next;
-  }
-
-  return true;
 };
 
 const a = new Node(7);
