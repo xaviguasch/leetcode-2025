@@ -10,23 +10,35 @@ class Node {
   }
 }
 
-const isUnivalueList = (head) => {
+const isUnivalueList = (head, prevVal = null) => {
   // ITERATIVE
-  const firstVal = head.val;
-  let current = head;
+  //   const firstVal = head.val;
+  //   let current = head;
 
-  while (current !== null) {
-    if (current.val !== head.val) {
-      return false;
-    }
+  //   while (current !== null) {
+  //     if (current.val !== head.val) {
+  //       return false;
+  //     }
 
-    current = current.next;
-  }
+  //     current = current.next;
+  //   }
 
-  return true;
+  //   return true;
 
   // Time: O(N)
   // Space: O(1)
+
+  // RECURSIVE
+  if (head === null) return true;
+  if (prevVal === null || prevVal === head.val) {
+    return isUnivalueList(head.next, head.val);
+  } else {
+    return false;
+  }
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node(7);
