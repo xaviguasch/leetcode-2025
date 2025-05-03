@@ -8,7 +8,35 @@ class Node {
   }
 }
 
-const longestStreak = (head) => {};
+const longestStreak = (head) => {
+  // ITERATIVE
+  let maxStreak = 0;
+  let currentStreak = 0;
+  let prevVal = null;
+
+  let current = head;
+
+  while (current !== null) {
+    if (current.val !== prevVal) {
+      currentStreak = 1;
+    } else {
+      currentStreak += 1;
+    }
+
+    if (currentStreak > maxStreak) {
+      maxStreak = currentStreak;
+    }
+
+    prevVal = current.val;
+    current = current.next;
+  }
+
+  return maxStreak;
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(1)
+};
 
 const a = new Node(5);
 const b = new Node(5);
