@@ -34,6 +34,17 @@ const removeNode = (head, targetVal) => {
   //     n = number of nodes
   // Time: O(n)
   // Space: O(1)
+
+  // RECURSIVE
+
+  if (head === null) return null;
+  if (head.val === targetVal) return head.next;
+  head.next = removeNode(head.next, targetVal);
+  return head;
+
+  //   n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node("a");
