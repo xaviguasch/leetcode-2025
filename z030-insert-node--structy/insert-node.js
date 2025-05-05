@@ -12,8 +12,51 @@ class Node {
   }
 }
 
-const insertNode = (head, value, index) => {
-  // todo
+const insertNode = (head, value, index, count = 0) => {
+  // ITERATIVE
+  //   if (index === 0) {
+  //     const newHead = new Node(value);
+  //     newHead.next = head;
+  //     return newHead;
+  //   }
+
+  //   let count = 0;
+  //   let current = head;
+  //   while (current !== null) {
+  //     if (count === index - 1) {
+  //       const next = current.next;
+  //       current.next = new Node(value);
+  //       current.next.next = next;
+  //     }
+
+  //     count += 1;
+  //     current = current.next;
+  //   }
+  //   return head;
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(1)
+
+  if (index === 0) {
+    const newHead = new Node(value);
+    newHead.next = head;
+    return newHead;
+  }
+
+  if (count === index - 1) {
+    const next = head.next;
+    head.next = new Node(value);
+    head.next.next = next;
+    return head;
+  }
+
+  insertNode(head.next, value, index, count + 1);
+  return head;
+
+  //   n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node("a");
