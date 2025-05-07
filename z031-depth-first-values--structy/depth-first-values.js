@@ -12,7 +12,28 @@ class Node {
 }
 
 const depthFirstValues = (root) => {
-  // todo
+  // ITERATIVE DEPTH FIRST
+  if (root === null) {
+    return [];
+  }
+
+  const stack = [root];
+  const resultArr = [];
+
+  while (stack.length > 0) {
+    const currentNode = stack.pop();
+    resultArr.push(currentNode.val);
+
+    if (currentNode.right) {
+      stack.push(currentNode.right);
+    }
+
+    if (currentNode.left) {
+      stack.push(currentNode.left);
+    }
+  }
+
+  return resultArr;
 };
 
 const a = new Node("a");
