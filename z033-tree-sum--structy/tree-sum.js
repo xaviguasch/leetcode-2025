@@ -58,6 +58,14 @@ const treeSum = (root) => {
 
   // Time: O(N)
   // Space: O(N)
+
+  // RECURSIVE DEPTH FIRST
+  if (root === null) return 0;
+
+  return root.val + treeSum(root.left) + treeSum(root.right);
+
+  // Time: O(N)
+  // Space: O(N)
 };
 
 const a = new Node(3);
