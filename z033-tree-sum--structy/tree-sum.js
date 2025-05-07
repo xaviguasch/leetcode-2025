@@ -50,8 +50,8 @@ const treeSum = (root) => {
     const currentNode = queue.shift();
     sum += currentNode.val;
 
-    if (currentNode.right !== null) queue.push(currentNode.right);
     if (currentNode.left !== null) queue.push(currentNode.left);
+    if (currentNode.right !== null) queue.push(currentNode.right);
   }
 
   return sum;
