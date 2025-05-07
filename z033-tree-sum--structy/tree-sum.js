@@ -10,7 +10,54 @@ class Node {
 }
 
 const treeSum = (root) => {
-  // todo
+  // ITERATIVE DEPTH FIRST
+
+  //   if (root === null) {
+  //     return 0;
+  //   }
+
+  //   const stack = [root];
+  //   let sum = 0;
+
+  //   while (stack.length > 0) {
+  //     const current = stack.pop();
+
+  //     sum += current.val;
+
+  //     if (current.right !== null) {
+  //       stack.push(current.right);
+  //     }
+
+  //     if (current.left !== null) {
+  //       stack.push(current.left);
+  //     }
+  //   }
+
+  //   return sum;
+
+  // Time: O(N)
+  // Space: O(N)
+
+  // ITERATIVE BREADTH FIRST
+  if (root === null) {
+    return 0;
+  }
+
+  const queue = [root];
+  let sum = 0;
+
+  while (queue.length > 0) {
+    const currentNode = queue.shift();
+    sum += currentNode.val;
+
+    if (currentNode.right !== null) queue.push(currentNode.right);
+    if (currentNode.left !== null) queue.push(currentNode.left);
+  }
+
+  return sum;
+
+  // Time: O(N)
+  // Space: O(N)
 };
 
 const a = new Node(3);
