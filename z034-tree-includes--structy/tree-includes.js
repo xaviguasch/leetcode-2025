@@ -11,23 +11,36 @@ class Node {
 
 const treeIncludes = (root, target) => {
   // ITERATIVE DEPTH FIRST
+  //   if (root === null) return false;
+  //   const stack = [root];
+  //   while (stack.length > 0) {
+  //     const currentNode = stack.pop();
+  //     if (currentNode.val === target) {
+  //       return true;
+  //     }
+  //     if (currentNode.right !== null) stack.push(currentNode.right);
+  //     if (currentNode.left !== null) stack.push(currentNode.left);
+  //   }
+  //   return false;
+  // Time: O(N)
+  // Space: O(N)
+
+  // ITERATIVE BREADTH FIRST
+
   if (root === null) return false;
 
-  const stack = [root];
+  const queue = [root];
 
-  while (stack.length > 0) {
-    const currentNode = stack.pop();
+  while (queue.length > 0) {
+    const currentNode = queue.shift();
 
-    if (currentNode.val === target) {
-      return true;
-    }
+    if (currentNode.val === target) return true;
 
-    if (currentNode.right !== null) stack.push(currentNode.right);
-    if (currentNode.left !== null) stack.push(currentNode.left);
+    if (currentNode.left !== null) queue.push(currentNode.left);
+    if (currentNode.right !== null) queue.push(currentNode.right);
   }
 
   return false;
-
   // Time: O(N)
   // Space: O(N)
 };
