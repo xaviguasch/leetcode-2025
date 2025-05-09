@@ -24,25 +24,26 @@ const treeIncludes = (root, target) => {
   //   return false;
   // Time: O(N)
   // Space: O(N)
-
   // ITERATIVE BREADTH FIRST
-
-  if (root === null) return false;
-
-  const queue = [root];
-
-  while (queue.length > 0) {
-    const currentNode = queue.shift();
-
-    if (currentNode.val === target) return true;
-
-    if (currentNode.left !== null) queue.push(currentNode.left);
-    if (currentNode.right !== null) queue.push(currentNode.right);
-  }
-
-  return false;
+  //   if (root === null) return false;
+  //   const queue = [root];
+  //   while (queue.length > 0) {
+  //     const currentNode = queue.shift();
+  //     if (currentNode.val === target) return true;
+  //     if (currentNode.left !== null) queue.push(currentNode.left);
+  //     if (currentNode.right !== null) queue.push(currentNode.right);
+  //   }
+  //   return false;
   // Time: O(N)
   // Space: O(N)
+
+  // RECURSIVE DEPTH FIRST
+  if (root === null) return false;
+  if (root.val === target) return true;
+  return treeIncludes(root.left, target) || treeIncludes(root.right, target);
+
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node("a");
