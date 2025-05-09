@@ -10,7 +10,26 @@ class Node {
 }
 
 const treeIncludes = (root, target) => {
-  // todo
+  // ITERATIVE DEPTH FIRST
+  if (root === null) return false;
+
+  const stack = [root];
+
+  while (stack.length > 0) {
+    const currentNode = stack.pop();
+
+    if (currentNode.val === target) {
+      return true;
+    }
+
+    if (currentNode.right !== null) stack.push(currentNode.right);
+    if (currentNode.left !== null) stack.push(currentNode.left);
+  }
+
+  return false;
+
+  // Time: O(N)
+  // Space: O(N)
 };
 
 const a = new Node("a");
