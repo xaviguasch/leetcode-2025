@@ -11,7 +11,24 @@ class Node {
   }
 }
 
-const treeMinValue = (root) => {};
+const treeMinValue = (root) => {
+  // ITERATIVE DEPTH FIRST
+  const stack = [root];
+  let minValue = root.val;
+
+  while (stack.length > 0) {
+    const currentNode = stack.pop();
+
+    if (currentNode.val < minValue) {
+      minValue = currentNode.val;
+    }
+
+    if (currentNode.right !== null) stack.push(currentNode.right);
+    if (currentNode.left !== null) stack.push(currentNode.left);
+  }
+
+  return minValue;
+};
 
 const a = new Node(3);
 const b = new Node(11);
