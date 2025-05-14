@@ -13,21 +13,39 @@ class Node {
 
 const treeMinValue = (root) => {
   // ITERATIVE DEPTH FIRST
-  const stack = [root];
+  //   const stack = [root];
+  //   let minValue = root.val;
+  //   while (stack.length > 0) {
+  //     const currentNode = stack.pop();
+  //     if (currentNode.val < minValue) {
+  //       minValue = currentNode.val;
+  //     }
+  //     if (currentNode.right !== null) stack.push(currentNode.right);
+  //     if (currentNode.left !== null) stack.push(currentNode.left);
+  //   }
+  //   return minValue;
+  // Time: O(N)
+  // Space: O(N)
+
+  // ITERATIVE BREADTH FIRST
+  const queue = [root];
   let minValue = root.val;
 
-  while (stack.length > 0) {
-    const currentNode = stack.pop();
+  while (queue.length > 0) {
+    const currentNode = queue.shift();
 
     if (currentNode.val < minValue) {
       minValue = currentNode.val;
     }
 
-    if (currentNode.right !== null) stack.push(currentNode.right);
-    if (currentNode.left !== null) stack.push(currentNode.left);
+    if (currentNode.left !== null) queue.push(currentNode.left);
+    if (currentNode.right !== null) queue.push(currentNode.right);
   }
 
   return minValue;
+
+  // Time: O(N)
+  // Space: O(N)
 };
 
 const a = new Node(3);
