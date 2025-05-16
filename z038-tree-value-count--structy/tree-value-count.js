@@ -9,7 +9,28 @@ class Node {
   }
 }
 
-const treeValueCount = (root, target) => {};
+const treeValueCount = (root, target) => {
+  // ITERATIVE DEPTH FIRST
+  if (root === null) return 0;
+
+  const stack = [root];
+  let count = 0;
+
+  while (stack.length > 0) {
+    const currentNode = stack.pop();
+
+    if (currentNode.val === target) count++;
+
+    if (currentNode.right !== null) stack.push(currentNode.right);
+    if (currentNode.left !== null) stack.push(currentNode.left);
+  }
+
+  return count;
+
+  //   n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
+};
 
 const a = new Node(12);
 const b = new Node(6);
