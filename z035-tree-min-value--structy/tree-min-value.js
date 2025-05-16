@@ -26,26 +26,30 @@ const treeMinValue = (root) => {
   //   return minValue;
   // Time: O(N)
   // Space: O(N)
-
   // ITERATIVE BREADTH FIRST
-  const queue = [root];
-  let minValue = root.val;
-
-  while (queue.length > 0) {
-    const currentNode = queue.shift();
-
-    if (currentNode.val < minValue) {
-      minValue = currentNode.val;
-    }
-
-    if (currentNode.left !== null) queue.push(currentNode.left);
-    if (currentNode.right !== null) queue.push(currentNode.right);
-  }
-
-  return minValue;
-
+  //   const queue = [root];
+  //   let minValue = root.val;
+  //   while (queue.length > 0) {
+  //     const currentNode = queue.shift();
+  //     if (currentNode.val < minValue) {
+  //       minValue = currentNode.val;
+  //     }
+  //     if (currentNode.left !== null) queue.push(currentNode.left);
+  //     if (currentNode.right !== null) queue.push(currentNode.right);
+  //   }
+  //   return minValue;
   // Time: O(N)
   // Space: O(N)
+
+  // RECURSIVE DEPTH FIRST
+  if (root === null) return Infinity;
+  const smallestLeftValue = treeMinValue(root.left);
+  const smallestRightValue = treeMinValue(root.right);
+  return Math.min(root.val, smallestLeftValue, smallestRightValue);
+
+  //   n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node(3);
