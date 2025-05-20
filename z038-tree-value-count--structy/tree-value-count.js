@@ -11,22 +11,36 @@ class Node {
 
 const treeValueCount = (root, target) => {
   // ITERATIVE DEPTH FIRST
+  //   if (root === null) return 0;
+  //   const stack = [root];
+  //   let count = 0;
+  //   while (stack.length > 0) {
+  //     const currentNode = stack.pop();
+  //     if (currentNode.val === target) count++;
+  //     if (currentNode.right !== null) stack.push(currentNode.right);
+  //     if (currentNode.left !== null) stack.push(currentNode.left);
+  //   }
+  //   return count;
+  //   n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
+
+  // ITERATIVE BREADTH FIRST
   if (root === null) return 0;
 
-  const stack = [root];
+  const queue = [root];
   let count = 0;
 
-  while (stack.length > 0) {
-    const currentNode = stack.pop();
+  while (queue.length > 0) {
+    const currentNode = queue.shift();
 
     if (currentNode.val === target) count++;
 
-    if (currentNode.right !== null) stack.push(currentNode.right);
-    if (currentNode.left !== null) stack.push(currentNode.left);
+    if (currentNode.left !== null) queue.push(currentNode.left);
+    if (currentNode.right !== null) queue.push(currentNode.right);
   }
 
   return count;
-
   //   n = number of nodes
   // Time: O(n)
   // Space: O(n)
