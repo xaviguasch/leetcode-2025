@@ -26,21 +26,34 @@ const treeValueCount = (root, target) => {
   // Space: O(n)
 
   // ITERATIVE BREADTH FIRST
+  //   if (root === null) return 0;
+
+  //   const queue = [root];
+  //   let count = 0;
+
+  //   while (queue.length > 0) {
+  //     const currentNode = queue.shift();
+
+  //     if (currentNode.val === target) count++;
+
+  //     if (currentNode.left !== null) queue.push(currentNode.left);
+  //     if (currentNode.right !== null) queue.push(currentNode.right);
+  //   }
+
+  //   return count;
+  //   n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
+
+  // RECURSIVE DEPTH FIRST
   if (root === null) return 0;
+  const match = root.val === target ? 1 : 0;
+  return (
+    match +
+    treeValueCount(root.left, target) +
+    treeValueCount(root.right, target)
+  );
 
-  const queue = [root];
-  let count = 0;
-
-  while (queue.length > 0) {
-    const currentNode = queue.shift();
-
-    if (currentNode.val === target) count++;
-
-    if (currentNode.left !== null) queue.push(currentNode.left);
-    if (currentNode.right !== null) queue.push(currentNode.right);
-  }
-
-  return count;
   //   n = number of nodes
   // Time: O(n)
   // Space: O(n)
