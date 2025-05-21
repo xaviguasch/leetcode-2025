@@ -12,7 +12,22 @@ class Node {
 }
 
 const bottomRightValue = (root) => {
-  // todo
+  // ITERATIVE BREADTH FIRST
+  const queue = [root];
+
+  let currentNode = null;
+  while (queue.length > 0) {
+    currentNode = queue.shift();
+
+    if (currentNode.left !== null) queue.push(currentNode.left);
+    if (currentNode.right !== null) queue.push(currentNode.right);
+  }
+
+  return currentNode.val;
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node(3);
