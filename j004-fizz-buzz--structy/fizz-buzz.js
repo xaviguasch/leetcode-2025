@@ -6,7 +6,24 @@
 // if the number is divisible by 3 and 5, make the element "fizzbuzz"
 
 const fizzBuzz = (n) => {
-  // todo
+  const result = [];
+
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result.push("fizzbuzz");
+    } else if (i % 3 === 0) {
+      result.push("fizz");
+    } else if (i % 5 === 0) {
+      result.push("buzz");
+    } else {
+      result.push(i);
+    }
+  }
+
+  return result;
 };
+
+// Time: O(n)
+// Space: O(n)
 
 console.log(fizzBuzz(11)); // -> [1,2,"fizz",4,"buzz","fizz",7,8,"fizz","buzz",11]
