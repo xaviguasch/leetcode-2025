@@ -6,7 +6,19 @@
 // You can assume that the array is non-empty.
 
 const maxValue = (nums) => {
-  // todo
+  let max = -Infinity;
+
+  for (let num of nums) {
+    if (num > max) {
+      max = num;
+    }
+  }
+
+  return max;
 };
+
+// n = length of array
+// Time: O(n)
+// Space: O(1)
 
 console.log(maxValue([4, 7, 2, 8, 10, 9])); // -> 10
