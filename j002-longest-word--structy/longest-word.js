@@ -1,12 +1,7 @@
-// max value
-// Write a function, maxValue, that takes in array of numbers as an argument. The function should return the largest number in the array.
+// longest word
+// Write a function, longestWord, that takes in a sentence string as an argument. The function should return the longest word in the sentence. If there is a tie, return the word that occurs later in the sentence.
 
-// Solve this without using any built-in array methods.
+// You can assume that the sentence is non-empty.
+const longestWord = (sentence) => {};
 
-// You can assume that the array is non-empty.
-
-const maxValue = (nums) => {
-  // todo
-};
-
-console.log(maxValue([4, 7, 2, 8, 10, 9])); // -> 10
+console.log(longestWord("what a wonderful world")); // -> 'wonderful'
