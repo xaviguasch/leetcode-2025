@@ -10,7 +10,8 @@ const pairs = (elements) => {
 
   for (let i = 0; i < elements.length; i++) {
     for (let j = i + 1; j < elements.length; j++) {
-      resultArr.push([elements[i], elements[j]]);
+      const pair = [elements[i], elements[j]];
+      resultArr.push(pair);
     }
   }
 
