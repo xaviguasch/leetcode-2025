@@ -7,6 +7,22 @@
 
 const pairProduct = (numbers, targetProduct) => {
   // todo
+  const hashMap = {};
+
+  for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+
+    const productNum = targetProduct / number;
+
+    if (productNum in hashMap) {
+      return [hashMap[productNum], i];
+    }
+
+    hashMap[number] = i;
+  }
 };
 
-console.log(pairProduct([3, 2, 5, 4, 1], 8)); // -> [1, 3]
+console.log(pairProduct([3, 2, 5, 4, 1], 8));
+
+// Time: O(N)
+// Space: O(N)
