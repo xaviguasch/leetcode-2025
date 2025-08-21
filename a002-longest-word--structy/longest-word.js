@@ -5,6 +5,17 @@
 
 const longestWord = (sentence) => {
   // todo
+  const wordsArr = sentence.split(" ");
+
+  let longestW = "";
+
+  for (let word of wordsArr) {
+    if (word.length >= longestW.length) {
+      longestW = word;
+    }
+  }
+
+  return longestW;
 };
 
 console.log(longestWord("what a wonderful world")); // -> 'wonderful'
