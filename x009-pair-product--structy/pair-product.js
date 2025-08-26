@@ -7,9 +7,21 @@
 
 const pairProduct = (numbers, targetProduct) => {
   // todo
+  const hashMap = {};
+
+  for (let [idx, num] of numbers.entries()) {
+    const complement = targetProduct / num;
+
+    if (complement in hashMap) {
+      return [idx, hashMap[complement]];
+    }
+    hashMap[num] = idx;
+  }
+
+  return hashMap;
 };
 
-// Time: O()
-// Space: O()
+// Time: O(N)
+// Space: O(N)
 
 console.log(pairProduct([3, 2, 5, 4, 1], 8)); // -> [1, 3]
