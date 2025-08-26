@@ -6,10 +6,20 @@
 // There is guaranteed to be one such pair that sums to the target.
 
 const pairSum = (numbers, targetSum) => {
-  // todo
+  const hashMap = {};
+
+  for (let [idx, num] of numbers.entries()) {
+    const complement = targetSum - num;
+
+    if (complement in hashMap) {
+      return [idx, hashMap[complement]];
+    }
+
+    hashMap[num] = idx;
+  }
 };
 
-// Time: O()
-// Space: O()
+// Time: O(N)
+// Space: O(N)
 
 console.log(pairSum([3, 2, 5, 4, 1], 8)); // -> [0, 2]
