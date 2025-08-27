@@ -4,10 +4,27 @@
 // You may assume that each input array does not contain duplicate elements.
 
 const exclusiveItems = (a, b) => {
-  // todo
+  const setA = new Set(a);
+  const setB = new Set(b);
+
+  const resultArr = [];
+
+  for (let item of b) {
+    if (!setA.has(item)) {
+      resultArr.push(item);
+    }
+  }
+
+  for (let item of a) {
+    if (!setB.has(item)) {
+      resultArr.push(item);
+    }
+  }
+
+  return resultArr;
 };
 
-// Time:
-// Space:
+// Time: O(N)
+// Space: O(N)
 
 console.log(exclusiveItems([4, 2, 1, 6], [3, 6, 9, 2, 10])); // -> [4,1,3,9,10]
