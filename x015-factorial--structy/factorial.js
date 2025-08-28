@@ -7,10 +7,14 @@
 // You can assume that n is a non-negative integer. Note that the factorial of 0 is defined to be 1 (wiki).
 
 const factorial = (n) => {
-  // todo
+  if (n === 0) {
+    return 1;
+  }
+
+  return n * factorial(n - 1);
 };
 
-// Time:
-// Space:
+// Time: O(N)
+// Space: O(N)
 
 console.log(factorial(3)); // -> 6
