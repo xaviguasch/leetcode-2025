@@ -11,7 +11,43 @@ class Node {
 }
 
 const linkedListValues = (head) => {
-  // todo
+  // ITERATIVE SOLUTION
+
+  //   let current = head;
+  //   const resultArr = [];
+
+  //   while (current !== null) {
+  //     resultArr.push(current.val);
+
+  //     current = current.next;
+  //   }
+
+  //   return resultArr;
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
+
+  // RECURSIVE SOLUTION
+  const valuesArr = [];
+
+  fillValues(head, valuesArr);
+
+  return valuesArr;
+
+  // n = number of nodes
+  // Time: O(n)
+  // Space: O(n)
+};
+
+const fillValues = (head, valuesArr) => {
+  if (head === null) {
+    return;
+  }
+
+  valuesArr.push(head.val);
+
+  return fillValues(head.next, valuesArr);
 };
 
 const a = new Node("a");
