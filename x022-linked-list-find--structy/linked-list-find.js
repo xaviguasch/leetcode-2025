@@ -10,20 +10,28 @@ class Node {
 
 const linkedListFind = (head, target) => {
   // ITERATIVE
-  let current = head;
+  //   let current = head;
 
-  while (current !== null) {
-    if (current.val === target) {
-      return true;
-    }
+  //   while (current !== null) {
+  //     if (current.val === target) {
+  //       return true;
+  //     }
 
-    current = current.next;
-  }
+  //     current = current.next;
+  //   }
 
-  return false;
+  //   return false;
 
   // Time: O(N)
   // Space: O(1)
+
+  // RECURSIVE
+  if (head === null) return false;
+  if (head.val === target) return true;
+  return linkedListFind(head.next, target);
+
+  // Time: O(n)
+  // Space: O(n)
 };
 
 const a = new Node("a");
