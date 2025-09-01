@@ -47,7 +47,7 @@ const fillValues = (head, valuesArr) => {
 
   valuesArr.push(head.val);
 
-  return fillValues(head.next, valuesArr);
+  fillValues(head.next, valuesArr);
 };
 
 const a = new Node("a");
