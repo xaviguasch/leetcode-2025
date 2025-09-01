@@ -9,7 +9,21 @@ class Node {
 }
 
 const linkedListFind = (head, target) => {
-  // todo
+  // ITERATIVE
+  let current = head;
+
+  while (current !== null) {
+    if (current.val === target) {
+      return true;
+    }
+
+    current = current.next;
+  }
+
+  return false;
+
+  // Time: O(N)
+  // Space: O(1)
 };
 
 const a = new Node("a");
