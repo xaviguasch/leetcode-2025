@@ -11,20 +11,32 @@ class Node {
 }
 
 const getNodeValue = (head, target) => {
-  // todo
-  let current = head;
-  let currIdx = 0;
+  // ITERATIVE
+  //   let current = head;
+  //   let currIdx = 0;
 
-  while (current !== null) {
-    if (currIdx === target) {
-      return current.val;
-    }
+  //   while (current !== null) {
+  //     if (currIdx === target) {
+  //       return current.val;
+  //     }
 
-    currIdx += 1;
-    current = current.next;
-  }
+  //     currIdx += 1;
+  //     current = current.next;
+  //   }
 
-  return null;
+  //   return null;
+
+  // Time: O(N)
+  // Space: O(1)
+
+  // RECURSIVE
+
+  if (head === null) return null;
+  if (index === 0) return head.val;
+  return getNodeValue(head.next, index - 1);
+
+  // Time: O(N)
+  // Space: O(N)
 };
 
 const a = new Node("a");
@@ -38,6 +50,3 @@ c.next = d;
 
 // a -> b -> c -> d
 console.log(getNodeValue(a, 2)); // 'c'
-
-// Time:O(N)
-// Space: O(1)
