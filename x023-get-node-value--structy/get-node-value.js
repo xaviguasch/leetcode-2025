@@ -1,5 +1,7 @@
-// linked list find
-// Write a function, linkedListFind, that takes in the head of a linked list and a target value. The function should return a boolean indicating whether or not the linked list contains the target.
+// get node value
+// Write a function, getNodeValue, that takes in the head of a linked list and an index. The function should return the value of the linked list at the specified index.
+
+// If there is no node at the given index, then return null.
 
 class Node {
   constructor(val) {
@@ -8,8 +10,21 @@ class Node {
   }
 }
 
-const linkedListFind = (head, target) => {
+const getNodeValue = (head, target) => {
   // todo
+  let current = head;
+  let currIdx = 0;
+
+  while (current !== null) {
+    if (currIdx === target) {
+      return current.val;
+    }
+
+    currIdx += 1;
+    current = current.next;
+  }
+
+  return null;
 };
 
 const a = new Node("a");
@@ -22,8 +37,7 @@ b.next = c;
 c.next = d;
 
 // a -> b -> c -> d
+console.log(getNodeValue(a, 2)); // 'c'
 
-console.log(linkedListFind(a, "c")); // true
-
-// Time:
-// Space:
+// Time:O(N)
+// Space: O(1)
