@@ -33,4 +33,7 @@ e.next = f;
 // a -> b -> c -> d -> e -> f
 
 console.log(reverseList(a));
+
 // f -> e -> d -> c -> b -> a
+
+// small test
